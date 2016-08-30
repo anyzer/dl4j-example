@@ -48,12 +48,12 @@ public class MLPClassifierLinear {
         //Load the training data:
         RecordReader rr = new CSVRecordReader();
 //        rr.initialize(new FileSplit(new File("src/main/resources/classification/linear_data_train.csv")));
-        rr.initialize(new FileSplit(new File("dl4j-examples/src/main/resources/classification/linear_data_train.csv")));
+        rr.initialize(new FileSplit(new File("C:/Workspace/Projects/dl4j-example/dl4j-examples/src/main/resources/classification/linear_data_train.csv")));
         DataSetIterator trainIter = new RecordReaderDataSetIterator(rr,batchSize,0,2);
 
         //Load the test/evaluation data:
         RecordReader rrTest = new CSVRecordReader();
-        rrTest.initialize(new FileSplit(new File("dl4j-examples/src/main/resources/classification/linear_data_eval.csv")));
+        rrTest.initialize(new FileSplit(new File("C:/Workspace/Projects/dl4j-example/dl4j-examples/src/main/resources/classification/linear_data_eval.csv")));
         DataSetIterator testIter = new RecordReaderDataSetIterator(rrTest,batchSize,0,2);
 
         MultiLayerConfiguration conf = new NeuralNetConfiguration.Builder()
@@ -128,7 +128,7 @@ public class MLPClassifierLinear {
         INDArray predictionsAtXYPoints = model.output(allXYPoints);
 
         //Get all of the training data in a single array, and plot it:
-        rr.initialize(new FileSplit(new File("dl4j-examples/src/main/resources/classification/linear_data_train.csv")));
+        rr.initialize(new FileSplit(new File("C:/Workspace/Projects/dl4j-example/dl4j-examples/src/main/resources/classification/linear_data_train.csv")));
         rr.reset();
         int nTrainPoints = 1000;
         trainIter = new RecordReaderDataSetIterator(rr,nTrainPoints,0,2);
@@ -137,7 +137,7 @@ public class MLPClassifierLinear {
 
 
         //Get test data, run the test data through the network to generate predictions, and plot those predictions:
-        rrTest.initialize(new FileSplit(new File("dl4j-examples/src/main/resources/classification/linear_data_eval.csv")));
+        rrTest.initialize(new FileSplit(new File("C:/Workspace/Projects/dl4j-example/dl4j-examples/src/main/resources/classification/linear_data_eval.csv")));
         rrTest.reset();
         int nTestPoints = 500;
         testIter = new RecordReaderDataSetIterator(rrTest,nTestPoints,0,2);
