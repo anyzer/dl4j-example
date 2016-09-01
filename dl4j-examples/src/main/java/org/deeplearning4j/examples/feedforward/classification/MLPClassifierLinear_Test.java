@@ -32,14 +32,14 @@ import java.io.File;
  * @author Alex Black (added plots)
  *
  */
-public class MLPClassifierLinear_Pair {
+public class MLPClassifierLinear_Test {
 
 
     public static void main(String[] args) throws Exception {
         int seed = 123;
         int batchSize = 50;
-        int nEpochs = 30;
-        int numInputs = 144;
+        int nEpochs = 10;
+        int numInputs = 12;
         int numOutputs = 3;
         int numHiddenNodes = 20;
         
@@ -51,13 +51,13 @@ public class MLPClassifierLinear_Pair {
 
         //Load the training data:
         RecordReader rr = new CSVRecordReader();
-        rr.initialize(new FileSplit(new File("C:/Workspace/Projects/dl4j-example/dl4j-examples/src/main/resources/classification/finalSupDL_train_.csv")));
+        rr.initialize(new FileSplit(new File("C:/Workspace/Projects/dl4j-example/dl4j-examples/src/main/resources/classification/Matrix_Train.csv")));
         //rr.initialize(new FileSplit(new File("C:/Workspace/Projects/dl4j-example/dl4j-examples/src/main/resources/classification/linear_data_train.csv")));
         DataSetIterator trainIter = new RecordReaderDataSetIterator(rr,batchSize,labelIndexInDataset,numberOfLabels);
 
         //Load the test/evaluation data:
         RecordReader rrTest = new CSVRecordReader();
-        rrTest.initialize(new FileSplit(new File("C:/Workspace/Projects/dl4j-example/dl4j-examples/src/main/resources/classification/finalSupDL_eval_.csv")));
+        rrTest.initialize(new FileSplit(new File("C:/Workspace/Projects/dl4j-example/dl4j-examples/src/main/resources/classification/Matrix_Train.csv")));
         //rrTest.initialize(new FileSplit(new File("C:/Workspace/Projects/dl4j-example/dl4j-examples/src/main/resources/classification/linear_data_eval.csv")));
         DataSetIterator testIter = new RecordReaderDataSetIterator(rrTest,batchSize,labelIndexInDataset,numberOfLabels);
 

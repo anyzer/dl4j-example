@@ -37,7 +37,7 @@ public class LenetMnistExample {
         int iterations = 1;
         int seed = 123;
 
-        log.info("Load data....");
+        log.info("Load data....");     //MnistDataSetIterator
         DataSetIterator mnistTrain = new MnistDataSetIterator(batchSize,true,12345);
         DataSetIterator mnistTest = new MnistDataSetIterator(batchSize,false,12345);
 
